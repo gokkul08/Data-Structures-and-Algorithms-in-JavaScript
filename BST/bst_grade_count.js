@@ -112,6 +112,10 @@ function getMax() {
 
 function find(data) {
   var current = this.root;
+  if(current == null) {
+    return null;
+  }
+  else {
   while(current.data != data) {
     if(data<current.data) {
       current = current.left;
@@ -124,6 +128,7 @@ function find(data) {
     }
   }
   return current;
+  }
 }
 
 function getSmallest(node) {
@@ -177,7 +182,7 @@ function update(data) {
 var grades = genArray(100);
 prArray(grades);
 var gradedistro = new BST();
-gradedistro.insert(grades);
+//gradedistro.insert(grades);
 for(var i = 0; i < grades.length; ++i) {
   var g = grades[i];
   var grade = gradedistro.find(g);
