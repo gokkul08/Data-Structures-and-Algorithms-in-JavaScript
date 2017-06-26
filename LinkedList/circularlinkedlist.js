@@ -5,6 +5,7 @@ function Node(element) {
 
 function LList() {
   this.head = new Node("head");
+  this.head.next = this.head;
   this.find = find;
   this.insert = insert;
   this.display = display;
@@ -29,7 +30,7 @@ function insert(newElement, item) {
 
 function display() {
   var currNode = this.head;
-  while(!(currNode.next == null)) {
+  while(!(currNode.next == null) && !(currNode.next.element == "head")) {
     console.log(currNode.next.element);
     currNode = currNode.next;
   }
@@ -56,6 +57,6 @@ cities.insert("Vijayawada", "Chennai");
 cities.insert("Bangalore", "Vijayawada");
 cities.insert("Hyderabad","Bangalore");
 cities.display();
-cities.remove("Hyderabad");
+//cities.remove("Hyderabad");
 console.log();
 cities.display();
