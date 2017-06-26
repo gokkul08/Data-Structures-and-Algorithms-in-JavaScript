@@ -19,7 +19,7 @@ function remove(key) {
 }
 
 function showAll() {
-  for(var key in Object.keys(this.datastore)) {
+  for(var key in this.datastore) {
     console.log(key + " -> " + this.datastore[key]);
   }
 }
